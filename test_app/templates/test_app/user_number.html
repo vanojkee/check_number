@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{% block title %}Введите число {% endblock %}
+{% block content %}
+<p>Введите загаданное вами число</p>
+<form action="{% url 'write_num' %}" method="post">
+    {% csrf_token %}
+    {{ number_form }}
+    <input type="submit" value="OK">
+</form>
+{% endblock %}

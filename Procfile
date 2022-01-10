@@ -1,0 +1,1 @@
+web: gunicorn zubenkoia.wsgi --log-file -

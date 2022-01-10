@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" type="text/css">
+</head>
+<body>
+<div align="center">
+
+<div class="row"></div>
+{% block content %}
+{% endblock %}
+<br>
+<h >Ваши числа:</h>
+    <br>
+    {% for answer in user_history reversed %}
+        <h>{{ answer }}</h><br>
+    {% endfor %}
+
+<table class="table", align="center", cellspacing="50", border="40">
+    {% for element in phychics %}
+        <thead>
+            <tr>
+                <th>Имя экстрасенса</th>
+                <th>Уровень доверия экстрасенса</th>
+                <th>Версия экстрасенса</th>
+                <th>История ответов экстрасенса</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ element.name }}</td>
+                <td>{{ element.trust_level }}</td>
+                <td>{{ element.psy_answer }}</td>
+                <td>
+                    {% for ver in element.all_answer reversed %}
+                        <div class="row">{{ ver }}</div>
+                    {% endfor %}
+                </td>
+            </tr>
+        </tbody>
+    {% endfor %}
+</table>
+
+</div>
+</body>
+</html>
