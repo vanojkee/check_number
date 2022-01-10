@@ -2,6 +2,8 @@ import random
 
 
 class Psychics:
+    '''Модель экстрасенса '''
+
     def __init__(self):
         name_list = ['Артем', 'Ванга', 'Кассандра', 'Кадони', 'Пахом', 'Алмаз', 'Борман']
         self.name = random.choice(name_list)
